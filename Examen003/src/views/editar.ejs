@@ -1,0 +1,36 @@
+<% include partes/cabecera%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-5">
+          <div class="card">
+            <div class="card-header">Editar </div>
+              <div class="card-body">
+                <form class="" action="/actualizar/<%= data.Id%>" method="POST">
+                  <div class="form-group">
+                    <label for="">Tipo</label>
+                    <input type="text" name="tipo" value="<%= data.tipo%>" class="form-control">
+                    <label for="">Directora</label>
+                    <input type="text" name="Directora" value="<%= data.Directora%>" class="form-control">
+                    <label for="">Correo Electronico</label>
+                    <input type="text" name="Correo_electronico" value="<%= data.Correo_electronico%>" class="form-control">
+                    <label for="">Telefono</label>
+                    <input type="text" name="Estado" value="<%= data.telefono%>" class="form-control">
+                    <label for="">Direccion</label>
+                    <input type="text" name="Longitud" value="<%= data.direccion%>" class="form-control">
+                    <label for="">Municipio</label>
+                    <input type="text" name="Latitud" value="<%= data.municipio%>" class="form-control">
+                  </div>
+                  <div class="">
+                    <input type="submit"  value="Insertar" class="btn btn-primary btn-block">
+                  </div>
+                </form>
+
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+
+<% include  partes/pie %>

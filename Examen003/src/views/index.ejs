@@ -1,0 +1,86 @@
+<% include partes/cabecera%>
+<nav class="navbar navbar-dark bg-dark mb-4">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a href="/" class="navbar-brand">Inicio</a>
+      <a href="/modelo" class="navbar-brand">Consultas</a>
+
+    </li>
+  </ul>
+
+
+</nav>
+
+    <div class="container">
+      <div class="row mt-5">
+
+          <table class="table table-bordered">
+            <thead> <!--  cabecera -->
+              <!--fila  -->
+              <tr>
+                <!-- atributos o cabeceras -->
+                <th>ID</th>
+                <th>tipo</th>
+                <th>Directora</th>
+                <th>Correlo electronico</th>
+                <th>Telefono</th>
+                <th>Direcion</th>
+                <th>Municipio</th>
+              </tr>
+            </thead>
+            <!-- cuerpo -->
+            <tbody>
+              <% if(data){ %>
+                 <% for(var i = 0;i < data.length;i++) { %>
+                   <tr>
+                     <td><%= data[i].Id%></td>
+                     <td><%= data[i].tipo%></td>
+                     <td><%= data[i].Directora%></td>
+                     <td><%= data[i].Correo_electronico%></td>
+                     <td><%= data[i].telefono%></td>
+                     <td><%= data[i].direccion%></td>
+                     <td><%= data[i].municipio%></td>
+                     <td> <a href="/borrar/<%= data[i].Id %>" class="btn btn-outline-danger form-control  ">Borrar</a>
+                          <a href="/actualizar/<%= data[i].Id %>" class="btn btn-outline-success form-control">actualizar</a>
+                     </td>
+                   </tr>
+                   <% } %>
+              <% } %>
+
+            </tbody>
+
+          </table>
+        </div>
+
+            <div class="card">
+              <div class="card-header">Registrar </div>
+                <div class="card-body">
+                  <form class="" action="/Insertar" method="POST">
+                    <div class="form-group">
+                      <label for="">Id</label>
+                      <input type="number" name="Id" value="" class="form-control">
+                      <label for="">Tipo</label>
+                      <input type="text" name="tipo" value="" class="form-control">
+                      <label for="">Directora</label>
+                      <input type="text" name="Directora" value="" class="form-control">
+                      <label for="">Correo Electronico</label>
+                      <input type="text" name="Correo_electronico" value="" class="form-control">
+                      <label for="">Telefono</label>
+                      <input type="text" name="telefono" value="" class="form-control">
+                      <label for="">Direccion</label>
+                      <input type="text" name="direccion" value="" class="form-control">
+                      <label for="">Municipio</label>
+                      <input type="text" name="municipio" value="" class="form-control">
+
+                    </div>
+                    <div class="">
+                      <input type="submit"  value="Insertar" class="btn btn-primary btn-block">
+                    </div>
+                  </form>
+
+                </div>
+
+        </div>
+      </div>
+    </div>
+<% include  partes/pie %>
